@@ -331,7 +331,7 @@ bool isCollision(const Triangle triangle,const Segment& segment )
 	Vector3 v21 = Subtract(v1, v2);
 	Vector3 v20 = Subtract(v0, v2);
 	
-	Vector3 normal = Cross(v01, v21);
+	Vector3 normal = Cross(v01, v12);
 
 	//法線ベクトルを正規化
 	normal = Normalize(normal);
@@ -363,9 +363,9 @@ bool isCollision(const Triangle triangle,const Segment& segment )
 	
 
 	//三角形の頂点からセグメントの始点までのベクトルを求める
-	Vector3 v0p = Subtract(v0, p1);
-	Vector3 v1p = Subtract(v1, p1);
-	Vector3 v2p = Subtract(v2, p1);
+	Vector3 v0p = Subtract(p, v0);
+	Vector3 v1p = Subtract(p, v1);
+	Vector3 v2p = Subtract(p, v2);
 
 	
 
